@@ -5,12 +5,14 @@ from .base_options import BaseOptions
 class TrainOptions(BaseOptions):
     def initialize(self, parser):
         parser = BaseOptions.initialize(self, parser)
+        parser.add_argument('--name', type=str, default='Mutual Encoder-Decoder',
+                            help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--log_dir', type=str, default='./logs', help='the path to record log')
         parser.add_argument('--display_freq', type=int, default=10, help='frequency of showing training results on screen')
         parser.add_argument('--print_freq', type=int, default=50, help='frequency of showing training results on console')
         parser.add_argument('--display_single_pane_ncols', type=int, default=0, help='if positive, display all images in a single visdom web panel with certain number of images per row.')
         parser.add_argument('--save_latest_freq', type=int, default=5000, help='frequency of saving the latest results')
-        parser.add_argument('--save_epoch_freq', type=int, default=2, help='frequency of saving checkpoints at the end of epochs')
+        parser.add_argument('--save_epoch_freq', type=int, default=1, help='frequency of saving checkpoints at the end of epochs')
         parser.add_argument('--continue_train', action='store_true', help='continue training: load the latest model')
         parser.add_argument('--epoch_count', type=int, default=1, help='the starting epoch count, we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>, ...')
         parser.add_argument('--phase', type=str, default='train', help='train, val, test, etc')
