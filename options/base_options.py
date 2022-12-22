@@ -14,7 +14,7 @@ class BaseOptions():
         parser.add_argument('--mask_root', type=str, default=r'./data/datasets/mask', help='path to mask, we use the datasetsets of partial conv hear')
         parser.add_argument('--batchSize', type=int, default=1, help='input batch size')
         parser.add_argument('--num_workers', type=int, default=4, help='numbers of the core of CPU')
-        parser.add_argument('--name', type=str, default='Mutual Encoder-Decoder',
+        parser.add_argument('--name', type=str, default='Mutual-Encoder-Decoder',
                             help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--fineSize', type=int, default=256, help='then crop to this size')
         parser.add_argument('--input_nc', type=int, default=6, help='# of input image channels')
