@@ -113,7 +113,7 @@ class MEDFE(BaseModel):
         self.Gt_DE = input_De.to(self.device)
         self.Gt_ST = input_St.to(self.device)
         self.input_DE = input_De.to(self.device)
-        print(input_De.shape,input_St.shape,mask.shape)
+
         self.mask_global = self.mask_process(mask.to(self.device))
         self.Gt_Local = input_De.to(self.device)
         # define local area which send to the local discriminator

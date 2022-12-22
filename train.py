@@ -26,6 +26,7 @@ if __name__ == "__main__":
         epoch_start_time = time.time()
         epoch_iter = 0
         for detail, structure, mask in iterator_train:
+            print(detail.shape, structure.shape, mask.shape)
             iter_start_time = time.time()
             total_steps += opt.batchSize
             epoch_iter += opt.batchSize

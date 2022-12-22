@@ -35,7 +35,7 @@ class DataProcess(torch.utils.data.Dataset):
         st_img = Image.open(self.st_paths[index])
         mask_img = Image.open(self.mask_paths[random.randint(0, self.N_mask - 1)])
         de_img = self.img_transform(de_img.convert('RGB'))
-        st_img = self.img_transform(st_img .convert('RGB'))
+        st_img = self.img_transform(st_img.convert('RGB'))
         mask_img = self.mask_transform(mask_img.convert('RGB'))
         return de_img, st_img, mask_img
 
