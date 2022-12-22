@@ -5,8 +5,6 @@ from .base_options import BaseOptions
 class TrainOptions(BaseOptions):
     def initialize(self, parser):
         parser = BaseOptions.initialize(self, parser)
-        parser.add_argument('--name', type=str, default='Mutual Encoder-Decoder',
-                            help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--log_dir', type=str, default='./logs', help='the path to record log')
         parser.add_argument('--display_freq', type=int, default=10, help='frequency of showing training results on screen')
         parser.add_argument('--print_freq', type=int, default=50, help='frequency of showing training results on console')
