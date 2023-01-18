@@ -5,7 +5,7 @@ class UnetSkipConnectionDBlock(nn.Module):
     def __init__(self, inner_nc, outer_nc, outermost=False, innermost=False, norm_layer=nn.BatchNorm2d,
                  use_dropout=False):
         super(UnetSkipConnectionDBlock, self).__init__()
-        uprelu = nn.ReLU(True)
+        uprelu = nn.ReLU()
         upnorm = norm_layer(outer_nc, affine=True)
         upconv = nn.ConvTranspose2d(inner_nc, outer_nc,
                                     kernel_size=4, stride=2,
