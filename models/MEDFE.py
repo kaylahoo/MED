@@ -134,7 +134,7 @@ class MEDFE(BaseModel):
     def forward(self):
 
         fake_p_1, fake_p_2, fake_p_3, fake_p_4, fake_p_5, fake_p_6 = self.netEN(
-            torch.cat([self.input_DE, self.inv_ex_mask], 1))
+        torch.cat([self.input_DE, self.inv_ex_mask], 1))
         De_in = [fake_p_1, fake_p_2, fake_p_3, fake_p_4, fake_p_5, fake_p_6]
         x_out = self.netMEDFE(De_in, self.mask_global)
         self.fake_out = self.netDE(x_out[0], x_out[1], x_out[2], x_out[3], x_out[4], x_out[5])
