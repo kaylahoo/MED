@@ -47,7 +47,7 @@ if __name__ == "__main__":
                 writer.add_scalar('G_stde', errors['G_stde'], total_steps + 1)
                 writer.add_scalar('D_loss', errors['D'], total_steps + 1)
                 writer.add_scalar('F_loss', errors['F'], total_steps + 1)
-                print('iteration time: %d' % t)
+                #print('iteration time: %d' % t)
         if epoch % opt.save_epoch_freq == 0:
             print('saving the model at the end of epoch %d, iters %d' %
                   (epoch, total_steps))
