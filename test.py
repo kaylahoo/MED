@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     opt = TestOptions().parse()
     model = create_model(opt)
-    model.netEN.module.load_state_dict(torch.load("37_net_EN.pkl"))
+    model.netEN.module.load_state_dict(torch.load("EN.pkl"))
     model.netDE.module.load_state_dict(torch.load("DE.pkl"))
     model.netMEDFE.module.load_state_dict(torch.load("MEDEF.pkl"))
     results_dir = r'./result'
