@@ -31,7 +31,7 @@ if __name__ == "__main__":
             total_steps += opt.batchSize
             epoch_iter += opt.batchSize
             model.set_input(detail, structure, mask)
-            #model.optimize_parameters()
+            model.optimize_parameters()
             # display the training processing
             if total_steps % opt.display_freq == 0:
                 input, output, GT = model.get_current_visuals()
