@@ -28,9 +28,9 @@ if __name__ == "__main__":
 
     opt = TestOptions().parse()
     model = create_model(opt)
-    model.netEN.module.load_state_dict(torch.load("37_net_EN.pth")['net'])
-    model.netDE.module.load_state_dict(torch.load("DE.pkl")['net'])
-    model.netMEDFE.module.load_state_dict(torch.load("MEDEF.pkl")['net'])
+    model.netEN.module.load_state_dict(torch.load("/home/lab265/lab265/liulu/MED/checkpoints/Mutual-Encoder-Decoder/37_net_EN.pth")['net'])
+    model.netDE.module.load_state_dict(torch.load("/home/lab265/lab265/liulu/MED/checkpoints/Mutual-Encoder-Decoder/37_net_DE.pkl")['net'])
+    model.netMEDFE.module.load_state_dict(torch.load("/home/lab265/lab265/liulu/MED/checkpoints/Mutual-Encoder-Decoder/37_net_MEDEF.pkl")['net'])
     results_dir = r'./result'
     if not os.path.exists( results_dir):
         os.mkdir(results_dir)
