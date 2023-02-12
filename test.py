@@ -41,8 +41,9 @@ if __name__ == "__main__":
     image_len = len(de_paths )
     for i in tqdm(range(image_len)):
         # only use one mask for all image
-        path_m = mask_paths[0]
+        path_m = mask_paths[i]
         path_d = de_paths[i]
+        print(path_d)
         path_s = de_paths[i]
 
         mask = Image.open(path_m).convert("RGB")
