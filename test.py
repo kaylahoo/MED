@@ -35,7 +35,7 @@ if __name__ == "__main__":
     if not os.path.exists( results_dir):
         os.mkdir(results_dir)
 
-    mask_paths = glob('{:s}/*'.format(opt.mask_root))
+    mask_paths = sorted(glob('{:s}/*'.format(opt.mask_root)))
     de_paths = sorted(glob('{:s}/*'.format(opt.de_root)))
     st_path = sorted(glob('{:s}/*'.format(opt.st_root)))
     image_len = len(de_paths)
@@ -43,7 +43,6 @@ if __name__ == "__main__":
         # only use one mask for all image
         path_m = mask_paths[i]
         path_d = de_paths[i]
-        print(path_d)
         path_s = de_paths[i]
 
         mask = Image.open(path_m).convert("RGB")
