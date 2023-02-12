@@ -36,9 +36,9 @@ if __name__ == "__main__":
         os.mkdir(results_dir)
 
     mask_paths = glob('{:s}/*'.format(opt.mask_root))
-    de_paths = glob('{:s}/*'.format(opt.de_root))
-    st_path = glob('{:s}/*'.format(opt.st_root))
-    image_len = len(de_paths )
+    de_paths = sorted(glob('{:s}/*'.format(opt.de_root)))
+    st_path = sorted(glob('{:s}/*'.format(opt.st_root)))
+    image_len = len(de_paths)
     for i in tqdm(range(image_len)):
         # only use one mask for all image
         path_m = mask_paths[i]
