@@ -9,8 +9,8 @@ class BaseOptions():
 
     def initialize(self, parser):
 
-        parser.add_argument('--st_root', type=str, default=r'/home/lab265/lab265/datasets/Celeba-HQ/celeba-hq/celeba-256/celeba-256-train-structure', help='path to structure images')
-        parser.add_argument('--de_root', type=str, default=r'/home/lab265/lab265/datasets/Celeba-HQ/celeba-hq/celeba-256/celeba-256-train', help='path to detail images (which are the groundtruth)')
+        parser.add_argument('--st_root', type=str, default=r'/home/lab265/lab265/csy/datasets/Paris_StreetView/paris_train_structure', help='path to structure images')
+        parser.add_argument('--de_root', type=str, default=r'/home/lab265/lab265/csy/datasets/Paris_StreetView/Paris_StreetView/train/paris_train_original', help='path to detail images (which are the groundtruth)')
         parser.add_argument('--mask_root', type=str, default=r'/home/lab265/lab265/csy/datasets/irregular_mask/masks', help='path to mask, we use the datasetsets of partial conv hear')
         parser.add_argument('--batchSize', type=int, default=1, help='input batch size')
         parser.add_argument('--num_workers', type=int, default=4, help='numbers of the core of CPU')
@@ -25,7 +25,7 @@ class BaseOptions():
         parser.add_argument('--gpu_ids', type=str, default='1', help='gpu ids: e.g. 0  0,1,2, 0,2')
         parser.add_argument('--model', type=str, default='training1', help='set the names of current training process')
         parser.add_argument('--nThreads', default=2, type=int, help='# threads for loading data')
-        parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints/Mutual-Encoder-Decoder/pth', help='models are saved here')
+        parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints/psv-pth', help='models are saved here')
         parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization')
         parser.add_argument('--use_dropout', action='store_true', help='use dropout for the generator')
         parser.add_argument('--init_type', type=str, default='normal', help='network initialization [normal|xavier|kaiming|orthogonal]')
